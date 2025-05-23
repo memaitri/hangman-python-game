@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hangman Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <pre>
+            _                                             
+           | |                                            
+           | |__   __ _ _ __   __ _ _ __ ___   __ _ _ __  
+           | '_ \ / _` | '_ \ / _` | '_ ` _ \ / _` | '_ \ 
+           | | | | (_| | | | | (_| | | | | | | (_| | | | |
+           |_| |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|_| |_|
+                               __/ |                      
+                              |___/    </pre>
+        <pre>{{ stage }}</pre>
+        <h2>{{ display }}</h2>
+        <p>Lives left: {{ lives }}</p>
+        <p>Guessed letters: {{ guessed | join(', ') }}</p>
+        <form method="post">
+            <input type="text" name="guess" maxlength="1" required>
+            <button type="submit">Guess</button>
+        </form>
+        <p>{{ message }}</p>
+        <a href="{{ url_for('reset') }}">🔁 Restart Game</a>
+    </div>
+</body>
+</html>
